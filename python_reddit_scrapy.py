@@ -1,25 +1,20 @@
 #######
 # IMPORT PACKAGES
 #######
-
 import praw
 import pandas as pd
 
-
 # Acessing the reddit api
-
-
 reddit = praw.Reddit(client_id="",#my client id
                      client_secret="",  #your client secret
                      user_agent="my user agent", #user agent name
                      username = "",     # your reddit username
                      password = "")     # your reddit password
 
-sub = ['Askreddit']  # make a list of subreddits you want to scrape the data from
+sub = ['1176216 ']  # make a list of subreddits you want to scrape the data from
 
 for s in sub:
     subreddit = reddit.subreddit(s)   # Chosing the subreddit
-
 
 ########################################
 #   CREATING DICTIONARY TO STORE THE DATA WHICH WILL BE CONVERTED TO A DATAFRAME
@@ -30,7 +25,7 @@ for s in sub:
 #   BE CAPTURING ALL IDS THAT COME IN OUR WAY
 
 # SCRAPING CAN BE DONE VIA VARIOUS STRATEGIES {HOT,TOP,etc} we will go with keyword strategy i.e using search a keyword
-    query = ['Gaming']
+    query = ['DD']
 
     for item in query:
         post_dict = {
